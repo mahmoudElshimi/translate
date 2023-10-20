@@ -2,11 +2,11 @@
 Translate - Translate a statement using dmenu and translate-shell or sdcv 
 =========================================================================
 
-![Screenshot of translate](screenshots/1.png)
+![Screenshot of translate](screenshots/translate.gif)
 
 About
 -----
-- A bash script that aim to translate a given statement, from clipboard(selection) or enter it manual.
+- A bash script that aims to translate a given statement, from clipboard(selection) or enter it manual.
 - If there is a network connection it will use google's engine(through translate-shell), else it will use a dictionary through sdcv.
 - It uses dmenu with sxhkd as a user interface. 
   
@@ -20,11 +20,15 @@ Requirements
 - [xclip](https://github.com/astrand/xclip/)
 Feel free to install them using your distro's package manger or from there reps.
 
+To Do
+-----
+- Replace translate-shell with another minimalist and efficient tool.
+
 Running
 -------
 - Clone the repo
 ```
-$ git clone 
+$ git clone https://github.com/mahmoudElshimi/translate.git
 ```
 - Add permission
 ```
@@ -36,3 +40,8 @@ $ chmod +x translate
 super + shift + t
 	/path/to/translate/translate $(xclip -o) 
 ```
+
+
+Configuration
+-------------
+- You can change languages or dictionaries in translate to match your specifications, see trans(1), and sdcv(1). 
