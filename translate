@@ -1,0 +1,41 @@
+#!/usr/bin/env  bash
+
+# license MIT
+# © 2023 mahmoudElshimi <mahmoudelshimi@protonmail.ch>
+
+
+args=$@
+network=$(ping -c 1 google.com)
+
+
+translate() {
+    # Check if we could reach google, Then Use trans.
+    if [[ -n $network ]]; then
+
+        # I have patched dmenu with "https://tools.suckless.org/dmenu/patches/bidi/",
+        # So i don't need -no-bidi option.
+        echo -e "$args" | trans  :ar -show-prompt-message=n -show-translation-phonetics=n\
+            -no-bidi -no-ansi -show-languages=n - 2>/dev/null | grep -v "^$" | dmenu -l 10 |\
+            xclip -selection clipboard
+
+
+    # if the network has not been established, Use sdcv.
+    else
+        sdcv -n -u  "Babylon English-Arabic" $args 2>/dev/null | sed " /-->.*/ d ; /Fou.*[0-9].*/ d"\
+            | cut -d ' ' -f 3- |grep -v "^$"| dmenu -l 10 | xclip -selection clipboard
+    fi
+}
+
+# If there is no argument, Prompt dmenu, Else ask for choice. 
+if [[ -z $args ]]; then
+    args=$(echo '' | dmenu -i -p "Translate: ") 
+    [[ -n $args ]] && translate
+
+else
+    choice=$(echo -e "Clipboard\nNew" | dmenu -i -p "Translate : ")
+
+    # If nothing has been passed, choice is new args, prompt dmenu and check for empty.
+    [[ "$choice" = "New" ]] && args=$(echo '' | dmenu -i -p "Translate: ") &&\
+        [[ -n $args ]] && translate
+    [[ "$choice" = "Clipboard" ]] && translate
+fi
