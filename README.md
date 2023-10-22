@@ -1,5 +1,5 @@
 
-translate - Translate statements using dmenu and translate-shell or sdcv 
+translate - Translate statements using dmenu with translate-shell or sdcv 
 =========================================================================
 
 ![Screenshot of translate](screenshots/translate.gif)
@@ -18,7 +18,8 @@ Requirements
 - [sdcv](https://github.com/Dushistov/sdcv/)
 - [translate-shell](https://github.com/soimort/translate-shell/)
 - [xclip](https://github.com/astrand/xclip/)
-Feel free to install them using your distro's package manger or from there reps.
+
+Feel free to install them using your distro's package manger or from there repos.
 
 To Do
 -----
