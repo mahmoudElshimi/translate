@@ -1,12 +1,12 @@
 
-Translate - Translate a statement using dmenu and translate-shell or sdcv 
+translate - Translate statements using dmenu and translate-shell or sdcv 
 =========================================================================
 
 ![Screenshot of translate](screenshots/translate.gif)
 
 About
 -----
-- A bash script that aims to translate a given statement, from clipboard(selection) or enter it manual.
+- A bash script that aims to translate given statements, from clipboard(selection) or enter it manual.
 - If there is a network connection it will use google's engine(through translate-shell), else it will use a dictionary through sdcv.
 - It uses dmenu with sxhkd as a user interface. 
   
