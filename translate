@@ -5,10 +5,10 @@
 
 
 args=$@
-network=$(ping -c 1 google.com)
-
 
 translate() {
+
+    network=$(ping -c 1 google.com)
     # Check if we could reach google, Then Use trans.
     if [[ -n $network ]]; then
 
@@ -19,7 +19,7 @@ translate() {
             xclip -selection clipboard
 
 
-    # if the network has not been established, Use sdcv.
+    # if we couldn't, Use sdcv.
     else
         sdcv -n -u  "Babylon English-Arabic" $args 2>/dev/null | sed " /-->.*/ d ; /Fou.*[0-9].*/ d"\
             | cut -d ' ' -f 3- |grep -v "^$"| dmenu -l 10 | xclip -selection clipboard

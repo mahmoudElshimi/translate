@@ -12,8 +12,7 @@ About
   
 Requirements
 ------------
-- [dmenu](https://tools.suckless.org/dmenu/)
-- [bidi patch for dmenu.](https://tools.suckless.org/dmenu/patches/bidi/dmenu-bidi-20210723-b34d318.diff)
+- [dmenu](https://tools.suckless.org/dmenu/) with [bidi](https://tools.suckless.org/dmenu/patches/bidi/dmenu-bidi-20210723-b34d318.diff) patch.
 - [sxhkd](https://github.com/baskerville/sxhkd/)
 - [sdcv](https://github.com/Dushistov/sdcv/)
 - [translate-shell](https://github.com/soimort/translate-shell/)
@@ -41,7 +40,6 @@ $ chmod +x translate
 super + shift + t
 	/path/to/translate/translate $(xclip -o) 
 ```
-
 
 Configuration
 -------------
