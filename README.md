@@ -7,7 +7,7 @@ translate - Translate statements using dmenu with translate-shell or sdcv
 About
 -----
 - A bash script that aims to translate given statements, from clipboard(selection) or enter them manual.
-- If there is a network connection it will use google's engine(through translate-shell), else it will use a dictionary through sdcv.
+- If there is a network connection it will use google's engine(through translate-shell), else it will use a dictionary (through sdcv).
 - It uses dmenu with sxhkd as a user interface. 
   
 Requirements
