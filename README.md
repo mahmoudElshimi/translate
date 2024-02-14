@@ -18,7 +18,7 @@ Requirements
 - [translate-shell](https://github.com/soimort/translate-shell/)
 - [xclip](https://github.com/astrand/xclip/)
 
-Feel free to install them using your distro's package manager or from theie repos.
+Feel free to install them using your distro's package manager or from their repos.
 
 To Do
 -----
